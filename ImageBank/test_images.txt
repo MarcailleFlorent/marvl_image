@@ -1,0 +1,12 @@
+TestImage/Coca_12.jpg
+TestImage/Coca_13.jpg
+TestImage/Coca_14.jpg
+TestImage/Coca_15.jpg
+TestImage/Pepsi_13.jpg
+TestImage/Pepsi_14.jpg
+TestImage/Pepsi_15.jpg
+TestImage/Pepsi_16.jpg
+TestImage/Sprite_13.jpg
+TestImage/Sprite_14.jpg
+TestImage/Sprite_15.jpg
+TestImage/Sprite_16.jpg
