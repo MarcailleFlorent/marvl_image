@@ -8,7 +8,14 @@ import static org.bytedeco.javacpp.opencv_imgcodecs.imread;
 import static org.bytedeco.javacpp.opencv_imgproc.THRESH_BINARY;
 import static org.bytedeco.javacpp.opencv_imgproc.threshold;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Set;
+
 import org.bytedeco.javacpp.opencv_core.Mat;
+
+import image.ComparedImage;
 
 public class GlobalTools {
 
@@ -44,5 +51,26 @@ public class GlobalTools {
 		namedWindow(windowsName, WINDOW_AUTOSIZE);	// Create a window for display
 		imshow(windowsName, displayImg);	// Show our image inside it
 		waitKey(0);	// Wait for a keys in the windows
+	}
+	
+	public static ArrayList<ComparedImage> convertHashMapToArrayListOfComparedImage(HashMap<String, Float> imgValueMap) {
+		ArrayList<ComparedImage> comparedImgArray = new ArrayList<>();
+		
+		Set<String> imgSet = imgValueMap.keySet();
+		Iterator<String> i = imgSet.iterator();
+		
+		String imgName = (String) i.next();
+		Float imgDistance = (Float) imgValueMap.get(imgName);
+		
+		comparedImgArray.add(new ComparedImage(imgName, imgDistance));
+		
+		while(i.hasNext()) {
+			imgName = (String) i.next();
+			imgDistance = (Float) imgValueMap.get(imgName);
+			
+			comparedImgArray.add(new ComparedImage(imgName, imgDistance));
+		}
+		
+		return comparedImgArray;
 	}
 }
